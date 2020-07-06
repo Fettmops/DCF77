@@ -78,19 +78,19 @@ void loop() {
             minute=0;
             bitsSet=0;
                   
-            if(bits[19]==1){
-            for (int i=28;i<34;i++){
+            if(bits[19]==1){              //Zeitinformationsbit immer 1
+            for (int i=28;i<34;i++){      //Stunde
               if(bits[i]==1){
               stunde+=wertArray[i-28];
               bitsSet++;
              }
             }
-             for (int i=20;i<27;i++){
+             for (int i=20;i<27;i++){     //Minute
               if(bits[i]==1){
               minute+=wertArray[i-20];
               bitsSet++;
              }}
-              /*Serial.println(stunde);
+              /*Serial.println(stunde);    //war für Debugging, jetzt unwichtig
               display.clearDisplay();
               bitter(bits,19,30,0,0);
               display.display();*/
